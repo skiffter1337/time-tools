@@ -1,0 +1,31 @@
+@import 'src/common/styles/sass/variables';
+@import 'src/common/styles/sass/mixins';
+
+
+.stopwatch {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  .stopwatchBlock {
+    @include flex(flex, center, center, column);
+    position: relative;
+
+    .buttons {
+      margin-top: 50px;
+      display: flex;
+      gap: 30px;
+    }
+
+    .hotkeyInfo {
+      position: absolute;
+     bottom: 35%;
+      color: $primaryColor;
+      font-size: 15px;
+    }
+  }
+}
+
+
+
+

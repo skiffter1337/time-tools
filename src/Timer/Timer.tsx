@@ -1,13 +1,12 @@
 import React, {useEffect} from 'react';
 import 'react-circular-progressbar/dist/styles.css';
-import s from './Timer.module.css'
+import s from './Timer.module.scss'
 import {buildStyles, CircularProgressbar} from "react-circular-progressbar";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../App/store/store";
 import {ChangeValueButtons} from "./SuperButton/ChangeValueButtons";
 import {InitialStateType, timerActions} from "./timerSlice";
 import {ControlButtons} from "./SuperButton/СontrolButtons";
-
 
 
 export const Timer = () => {
@@ -68,9 +67,13 @@ export const Timer = () => {
     return (
         <div className={s.timer}>
             <div className={s.timerBlock}>
-                <CircularProgressbar value={progressbarPercentage} text={progressbarText} className={s.progressbar}
-                                     styles={buildStyles({textColor: "#041e3a", pathColor: "#041e3a"})}/>
-                <div className={s.buttonsContainer}>
+
+                <div>
+                    <CircularProgressbar value={progressbarPercentage} text={progressbarText} className={s.progressbar}
+                                         styles={buildStyles({textColor: "#041e3a", pathColor: "#041e3a"})}/>
+                </div>
+
+                <div>
                     <div className={s.controlButtons}>
                         <ControlButtons callback={{start, stop, reset, resume}}/>
                     </div>
@@ -78,6 +81,7 @@ export const Timer = () => {
                         <ChangeValueButtons updateTimer={updateTimer}/>
                     </div>
                 </div>
+
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactTypingEffect from "react-typing-effect";
-import {quotes} from "../quotes";
+import {quotes} from "../trash/quotes";
 import s from './Main.module.scss'
 import {NavLink} from "react-router-dom";
 

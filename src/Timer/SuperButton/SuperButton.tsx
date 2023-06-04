@@ -1,5 +1,5 @@
 import React, {ReactNode} from 'react';
-import s from '../Timer.module.css'
+import s from '../Timer.module.scss'
 
 type SuperButtonType = {
     callback: () => void

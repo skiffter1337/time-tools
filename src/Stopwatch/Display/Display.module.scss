@@ -1,0 +1,15 @@
+@import 'src/common/styles/sass/variables';
+@import 'src/common/styles/sass/mixins';
+
+.time {
+    padding: 15px;
+    display: inline-block;
+    width: 70px;
+    text-align: center;
+    font-size: 30px;
+
+    color: $secondaryColor;
+    background-color: $primaryColor;
+    border-radius: 10%;
+
+}

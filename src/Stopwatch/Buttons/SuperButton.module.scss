@@ -1,0 +1,16 @@
+@import 'src/common/styles/sass/variables';
+@import 'src/common/styles/sass/mixins';
+
+.button {
+    @include fontFamily('Montserrat', 600, 22px, 27px, $secondaryColor);
+    padding: 10px;
+    border-radius: 5%;
+    color: $secondaryColor;
+    background-color: $primaryColor;
+    border: 2px solid $primaryColor;
+}
+
+.button:hover {
+    color: $primaryColor;
+    background-color: $secondaryColor;
+}

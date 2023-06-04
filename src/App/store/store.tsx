@@ -1,12 +1,20 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import {timerSlice} from "../../Timer/timerSlice";
 
-const reducer = combineReducers({
+
+
+export type AppRootStateType = ReturnType<typeof rootReducer>
+
+const rootReducer = combineReducers({
     timer: timerSlice,
-    stopwatch: stopwatchSlice,
+    // stopwatch: stopwatchSlice,
 
 
 })
+
+
 
 export const store = configureStore({
-    reducer,
+    reducer: rootReducer,
 })
+

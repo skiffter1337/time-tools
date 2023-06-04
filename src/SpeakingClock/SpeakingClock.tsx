@@ -1,8 +1,9 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import s from './SpeakingClock.module.scss'
-import { Switch } from '@mui/material';
 import {DigitalClock} from "./DigitalClock/DigitalClock";
 import {AnalogClock} from "./AnalogClock/AnalogClock";
+import Switch from "@material-ui/core/Switch";
+
 
 
 
@@ -46,7 +47,7 @@ export const SpeakingClock = () => {
                     </div>
                     <div>
                         Switch to change mode -
-                        <Switch onChange={onSwitchMode} size={'small'} color={'success'}/>
+                        <Switch onChange={onSwitchMode} size={'small'} />
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import s from "../SpeakingClock/SpeakingClock.module.scss";
+import s from './../SpeakingClock.module.scss'
 
 
 type DigitalClockType = {

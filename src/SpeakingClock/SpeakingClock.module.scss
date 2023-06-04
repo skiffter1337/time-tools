@@ -3,8 +3,8 @@
 
 .speakingClock {
     min-height: 100vh;
-    padding: 100px 0;
     position: relative;
+  color: $primaryColor;
   .clockBlock {
     background-color: transparent;
     @include flex(flex, center, center, column);

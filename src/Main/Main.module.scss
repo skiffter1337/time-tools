@@ -8,13 +8,25 @@
   justify-content: center;
   align-items: center;
   gap: 50px;
+
+  .quotes {
+    font-size: 22px;
+    font-style: italic;
+    color: $primaryColor;
+  }
+
+  .links {
+    display: flex;
+    gap: 20px;
+
+    .link {
+      text-decoration: none;
+      color: $primaryColor;
+    }
+  }
+
+
 }
 
-.quotes {
-  font-size: 22px;
-font-style: italic;
-}
-.links {
-  display: flex;
-  gap: 20px;
-}
+
+

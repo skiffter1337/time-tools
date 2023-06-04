@@ -1,0 +1,9 @@
+@import 'src/common/styles/sass/variables';
+@import 'src/common/styles/sass/mixins';
+
+.error {
+  min-height: 100vh;
+  font-size: 54px;
+  @include flex(flex, center, center, column);
+  gap: 50px;
+}

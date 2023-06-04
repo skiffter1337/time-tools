@@ -22,6 +22,18 @@
     .link {
       text-decoration: none;
       color: $primaryColor;
+      &::after {
+        background-color: $primaryColor;
+        content: "";
+        display: block;
+        height: 2px;
+        top: 20px;
+        transition: width .2s ease-in-out;
+        width: 0;
+      }
+      &:hover::after {
+        width: 100%;
+      }
     }
   }
 

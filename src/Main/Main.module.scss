@@ -1,0 +1,20 @@
+@import 'src/common/styles/sass/variables';
+@import 'src/common/styles/sass/mixins';
+
+.main_container {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.quotes {
+  font-size: 22px;
+font-style: italic;
+}
+.links {
+  display: flex;
+  gap: 20px;
+}

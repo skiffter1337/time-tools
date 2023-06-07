@@ -2,15 +2,31 @@
 @import 'src/common/styles/sass/mixins';
 
 .button {
-    @include fontFamily('Montserrat', 600, 22px, 27px, $secondaryColor);
-    padding: 10px;
-    border-radius: 5%;
+  @include fontFamily('Montserrat', 600, 22px, 27px);
+
+  padding: 10px;
+  border-radius: 5%;
+  border: 2px solid;
+
+  &.light {
     color: $secondaryColor;
     background-color: $primaryColor;
-    border: 2px solid $primaryColor;
-}
+    border-color: $primaryColor;
 
-.button:hover {
+    &:hover {
+      color: $primaryColor;
+      background-color: $secondaryColor;
+    }
+  }
+
+  &.dark {
     color: $primaryColor;
     background-color: $secondaryColor;
+    border-color: $secondaryColor;
+
+    &:hover {
+      color: $secondaryColor;
+      background-color: $primaryColor;
+    }
+  }
 }

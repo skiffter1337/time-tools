@@ -1,44 +1,60 @@
 @import 'src/common/styles/sass/variables';
 @import 'src/common/styles/sass/mixins';
 
+//light theme styles
 .main_container {
-  min-height: 100vh;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 90vh;
+  @include flex(flex, center, center, column);
   gap: 50px;
-
-  .quotes {
-    font-size: 22px;
-    font-style: italic;
-    color: $primaryColor;
-  }
-
-  .links {
-    display: flex;
-    gap: 20px;
-
-    .link {
-      text-decoration: none;
+  &.light {
+    background-color: $secondaryColor;
+    .quotes {
+      font-size: 22px;
+      font-style: italic;
       color: $primaryColor;
-      &::after {
-        background-color: $primaryColor;
-        content: "";
-        display: block;
-        height: 2px;
-        top: 20px;
-        transition: width .2s ease-in-out;
-        width: 0;
-      }
-      &:hover::after {
-        width: 100%;
+    }
+    .links {
+      display: flex;
+      gap: 20px;
+      text-align: center;
+
+      .link {
+        text-decoration: none;
+        color: $primaryColor;
+
+        &::after {
+          @include pseudoLine();
+          background-color: $primaryColor;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
       }
     }
   }
 
-
+//dark theme styles
+  &.dark {
+    background-color: $primaryColor;
+    .quotes {
+      color: $secondaryColor;
+    }
+    .links {
+      display: flex;
+      gap: 20px;
+      .link {
+        color: $secondaryColor;
+        text-decoration: none;
+        &::after {
+          @include pseudoLine();
+          background-color: $secondaryColor;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
-
-
 

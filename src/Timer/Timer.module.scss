@@ -3,23 +3,34 @@
 
 
 .timer {
-  min-height: 100vh;
+  min-height: 90vh;
   @include flex(flex, center, center);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: $secondaryColor;
+
+  &.dark {
+    background-color: $primaryColor;
+  }
+
   .timerBlock {
-    background-color: $secondaryColor;
     @include flex(flex, center, center, column);
     gap: 50px;
+    background-color:$secondaryColor;
+    &.dark {
+      background-color: $primaryColor;
+    }
     .progressbar {
       width: 100%;
-      background-color: $secondaryColor;
     }
+
     .controlButtons {
       @include flex(flex, center);
       gap: 20px;
       background-color: $secondaryColor;
+
+      &.dark {
+        background-color: $primaryColor;
+      }
+
       .controlButton {
         @include fontFamily('Montserrat', 600, 22px, 27px, $secondaryColor);
         padding: 10px;
@@ -27,9 +38,21 @@
         color: $secondaryColor;
         background-color: $primaryColor;
         border: 2px solid $primaryColor;
+
+        &.dark {
+          @include fontFamily('Montserrat', 600, 22px, 27px, $primaryColor);
+          background-color: $secondaryColor;
+          border: 2px solid $secondaryColor;
+
+          &:hover {
+            color: $secondaryColor;
+            background-color: $primaryColor;
+          }
+        }
+
         &:hover {
-          color: #041e3a;
-          background-color: white;
+          color: $primaryColor;
+          background-color: $secondaryColor;
         }
       }
     }
@@ -39,6 +62,9 @@
       gap: 10px;
       padding-top: 20px;
       background-color: $secondaryColor;
+      &.dark {
+        background-color: $primaryColor;
+      }
       .changeValueButton {
         @include fontFamily('Montserrat', 600, 22px, 27px, $secondaryColor);
         width: 50px;
@@ -47,9 +73,18 @@
         border-radius: 50%;
         background-color: $primaryColor;
         border: 2px solid $primaryColor;
+        &.dark {
+          @include fontFamily('Montserrat', 600, 22px, 27px, $primaryColor);
+          background-color: $secondaryColor;
+          border: 2px solid $secondaryColor;
+        }
         &:hover {
           color: $primaryColor;
           background-color: $secondaryColor;
+        }
+        &:hover.dark {
+          color: $secondaryColor;
+          background-color: $primaryColor;
         }
       }
     }

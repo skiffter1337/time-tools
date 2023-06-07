@@ -14,3 +14,12 @@
   text-decoration: $decoration;
   text-transform: $transform;
 }
+
+@mixin pseudoLine() {
+  content: "";
+  display: block;
+  height: 2px;
+  top: 20px;
+  transition: width .2s ease-in-out;
+  width: 0;
+}

@@ -1,31 +1,55 @@
 @import 'src/common/styles/sass/variables';
 @import 'src/common/styles/sass/mixins';
 
-
 .stopwatch {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
+  position: relative;
 
-  .stopwatchBlock {
-    @include flex(flex, center, center, column);
-    position: relative;
+  &.light {
+    background-color: $secondaryColor;
 
-    .buttons {
-      margin-top: 50px;
-      display: flex;
-      gap: 30px;
+    .stopwatchBlock {
+      @include flex(flex, center, center, column);
+
+      .controlButtons {
+        margin-top: 50px;
+        display: flex;
+        gap: 30px;
+      }
+
+      .hotkeyInfo {
+        &.light {
+          display: inline-block;
+          margin-top: 15px;
+          color: $primaryColor;
+          font-size: 15px;
+        }
+      }
     }
+  }
 
-    .hotkeyInfo {
-      position: absolute;
-     bottom: 35%;
-      color: $primaryColor;
-      font-size: 15px;
+  &.dark {
+    background-color: $primaryColor;
+
+    .stopwatchBlock {
+      @include flex(flex, center, center, column);
+
+      .controlButtons {
+        margin-top: 50px;
+        display: flex;
+        gap: 30px;
+      }
+
+      .hotkeyInfo {
+        &.dark {
+          display: inline-block;
+          margin-top: 15px;
+          color: $secondaryColor;
+          font-size: 15px;
+        }
+      }
     }
   }
 }
-
-
-
-

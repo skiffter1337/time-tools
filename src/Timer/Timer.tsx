@@ -7,11 +7,13 @@ import {AppRootStateType} from "../App/store/store";
 import {ChangeValueButtons} from "./SuperButton/ChangeValueButtons";
 import {InitialStateType, timerActions} from "./timerSlice";
 import {ControlButtons} from "./SuperButton/СontrolButtons";
+import {selectTheme} from "../App/app.selector";
 
 
 export const Timer = () => {
 
     const dispatch = useDispatch()
+    const theme = useSelector(selectTheme)
     const timerState = useSelector<AppRootStateType, InitialStateType>(state => state.timer)
     let minutes = Math.floor(timerState.timeLeft / 60)
     let seconds = Math.floor((timerState.timeLeft - minutes * 60))
@@ -64,20 +66,24 @@ export const Timer = () => {
     const progressbarText = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`
     const progressbarPercentage = timerState.timeLeft === 0 ? 0 : Math.round(timerState.timeLeft / timerState.totalTime * 100)
 
+    const progressbarClasses = theme === 'light' ? '#041e3a' : '#fff'
     return (
-        <div className={s.timer}>
-            <div className={s.timerBlock}>
+        <div className={`${s.timer} ${theme === 'light' ? s.light : s.dark}`}>
+            <div className={`${s.timerBlock} ${theme === 'light' ? s.light : s.dark}`}>
 
                 <div>
-                    <CircularProgressbar value={progressbarPercentage} text={progressbarText} className={s.progressbar}
-                                         styles={buildStyles({textColor: "#041e3a", pathColor: "#041e3a"})}/>
+                    <CircularProgressbar
+                        value={progressbarPercentage}
+                        text={progressbarText}
+                        className={s.progressbar}
+                        styles={buildStyles({textColor: progressbarClasses, pathColor: progressbarClasses, trailColor: 'darkgray'})}/>
                 </div>
 
                 <div>
-                    <div className={s.controlButtons}>
+                    <div className={`${s.controlButtons} ${theme === 'light' ? s.light : s.dark}`}>
                         <ControlButtons callback={{start, stop, reset, resume}}/>
                     </div>
-                    <div className={s.changeValueButtons}>
+                    <div className={`${s.changeValueButtons} ${theme === 'light' ? s.light : s.dark}`}>
                         <ChangeValueButtons updateTimer={updateTimer}/>
                     </div>
                 </div>

@@ -32,6 +32,9 @@ const slice = createSlice({
         setTime: (state, action: PayloadAction<{time: {ms: number, s: number, m: number, h: number}}>) => {
             state.time = action.payload.time
         },
+        reset: (state) => {
+          state.time = {ms: 0, s: 0, m: 0, h: 0}
+        },
         setStatus: (state, action: PayloadAction<{status: number}>) => {
             state.status = action.payload.status
         },

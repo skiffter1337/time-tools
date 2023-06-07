@@ -3,13 +3,15 @@ import s from './SpeakingClock.module.scss'
 import {DigitalClock} from "./DigitalClock/DigitalClock";
 import {AnalogClock} from "./AnalogClock/AnalogClock";
 import Switch from "@material-ui/core/Switch";
+import {useSelector} from "react-redux";
+import {selectTheme} from "../App/app.selector";
 
 
 
 
 
 export const SpeakingClock = () => {
-
+    const theme = useSelector(selectTheme)
     const [currentTime, setCurrentTime] = useState(new Date())
     const [isAnalogClock, setIsAnalogClock] = useState(false)
 
@@ -28,7 +30,7 @@ export const SpeakingClock = () => {
 
 
     return (
-        <div className={s.speakingClock}>
+        <div className={`${s.speakingClock} ${theme === 'light' ? s.light : s.dark}`}>
             <div className={s.clockBlock}>
 
                 <div className={s.clocks}>

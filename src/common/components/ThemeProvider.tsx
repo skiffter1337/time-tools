@@ -1,24 +1,41 @@
-import React, {createContext, useState} from 'react';
-
-
-
-
-// type ThemeProviderType = {
-//     theme: 'light' | 'dark'
-//     toggleTheme: () => void
+import React from 'react';
+// import {useDispatch, useSelector} from "react-redux";
+// import {appActions} from "../../App/app.slice";
+// import {AppRootStateType} from "../../App/store/store";
+//
+// export type ThemeType = 'light' | 'dark'
+//
+// type ThemeContextType = {
+//     theme: ThemeType
 // }
-
-// export const ThemeContext = createContext('light');
 //
-// export const ThemeProvider: React.FC<ThemeProviderType> = () => {
+// type ThemeProviderType = {
+//     children: React.ReactNode
+// }
 //
+// export const ThemeContext = createContext<ThemeContextType>({theme: 'light'});
+// export const ThemeProvider: React.FC<ThemeProviderType> = ({ children }) => {
 //
-//     const [theme, setTheme] = useState<'light' | 'dark'>('light')
-//     const toggleTheme = () => setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'))
+//     const dispatch = useDispatch()
+//     const theme = useSelector<AppRootStateType, string>(state => state.app.theme)
+//
+//     // const [theme, setTheme] = useState<ThemeType>('light');
+//
+//     const toggleTheme = () => {
+//         dispatch(appActions.setTheme({theme: 'dark'}))
+//
+//         // setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+//     };
+//
+//     // const contextValue: ThemeContextType = {
+//     //     theme,
+//     //     toggleTheme,
+//     // };
 //     return (
-//         <ThemeContext.Provider value={{ theme, toggleTheme }}>
+//         <ThemeContext.Provider value={theme}>
 //             {children}
 //         </ThemeContext.Provider>
 //     );
 // };
 //
+

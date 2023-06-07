@@ -1,0 +1,10 @@
+@import 'src/common/styles/sass/variables';
+
+.digitalClockTime {
+  width: 100%;
+  font-size: 100px;
+  color: $primaryColor;
+  &.dark {
+    color: $secondaryColor;
+  }
+}

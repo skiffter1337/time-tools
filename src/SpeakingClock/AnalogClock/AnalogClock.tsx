@@ -1,11 +1,14 @@
 import React, {useEffect, useRef} from 'react';
 import s from './AnalogClock.module.css'
+import {useSelector} from "react-redux";
+import {selectTheme} from "../../App/app.selector";
 
 type AnalogClockType = {
     currentTime: Date
 }
 export const AnalogClock = (props: AnalogClockType) => {
     const canvasRef = useRef<HTMLCanvasElement>(null)
+    const theme = useSelector(selectTheme)
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -34,7 +37,7 @@ export const AnalogClock = (props: AnalogClockType) => {
                     // Рисуем центр часов
                     ctx.beginPath();
                     ctx.arc(radius, radius, 5, 0, 2 * Math.PI);
-                    ctx.fillStyle = "black";
+                    ctx.fillStyle = theme === 'light' ? '#041e3a' : '#fff';
                     ctx.fill();
 
                     // Рисуем стрелки
@@ -73,7 +76,7 @@ export const AnalogClock = (props: AnalogClockType) => {
                     ctx.beginPath();
                     ctx.moveTo(radius, radius);
                     ctx.lineTo(secondX, secondY);
-                    ctx.strokeStyle = "#041e3a";
+                    ctx.strokeStyle = theme === 'light' ? '#041e3a' : '#fff';
                     ctx.stroke();
                 }
 

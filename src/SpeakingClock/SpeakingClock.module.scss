@@ -2,30 +2,36 @@
 @import 'src/common/styles/sass/mixins';
 
 .speakingClock {
-    min-height: 100vh;
-    position: relative;
+  min-height: 90vh;
+  position: relative;
   color: $primaryColor;
+  background-color: $secondaryColor;
+
+  &.dark {
+    color: $secondaryColor;
+    background-color: $primaryColor
+  }
+
   .clockBlock {
     background-color: transparent;
     @include flex(flex, center, center, column);
     gap: 30px;
+
     .clocks {
       position: absolute;
       bottom: 50%;
-      .digitalClockTime {
-        width: 100%;
 
-        font-size: 100px;
-        color: #041e3a;
-      }
+
+
     }
 
-  }
-  .dateAndModeContainer {
-    position: absolute;
-    @include flex(flex, center, center, column);
-    gap: 10px;
-    bottom: 40%;
+
+    .dateAndModeContainer {
+      position: absolute;
+      @include flex(flex, center, center, column);
+      gap: 10px;
+      bottom: 40%;
+    }
   }
 }
 
